@@ -3,27 +3,92 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Image Search</title>
     <link rel="stylesheet" href="style.css" />
-    <title>Image-Search</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <h1>Image search engine</h1>
+  <body
+    class="min-h-screen flex flex-col bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] text-white"
+  >
+    <!-- Navbar -->
+    <nav
+      class="w-full flex justify-between items-center px-8 py-4 bg-transparent"
+    >
+      <div class="text-2xl font-bold tracking-wide">Image Search</div>
+      <div class="space-x-4">
+        <button
+          class="px-4 py-1 border rounded-full hover:bg-white hover:text-black transition"
+        >
+          Sign in
+        </button>
+        <button
+          class="px-4 py-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-semibold shadow hover:opacity-90 transition"
+        >
+          Sign up
+        </button>
+      </div>
+    </nav>
 
-    <!-- Form section start -->
+    <!-- Hero Section -->
+    <section
+      class="flex flex-col items-center justify-center flex-grow text-center px-6"
+    >
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-snug">
+        👉 Search Smarter, Create Faster<br />
+        <span class="text-purple-400">Create Faster</span>
+      </h1>
+      <p class="mt-4 text-lg max-w-2xl opacity-80">
+        Find high-quality images tailored to your needs with AI-powered search technology.
+      </p>
 
-    <form id="search-form">
-      <input
-        type="text"
-        id="search-box"
-        placeholder="Search anything here..."
-      />
-      <button>Search</button>
-    </form>
+      <!-- CTA -->
+      <a
+        href="#search-box"
+        class="mt-6 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-lg font-semibold shadow-lg hover:opacity-90 transition"
+      >
+        Get Started Now →
+      </a>
 
-    <!-- Form section end -->
+      <!-- Search Form -->
+      <form
+        id="search-form"
+        class="mt-10 flex w-full max-w-xl bg-white rounded-full overflow-hidden shadow-lg"
+      >
+        <input
+          type="text"
+          id="search-box"
+          placeholder="Search images..."
+          class="flex-grow px-4 py-2 text-gray-700 outline-none"
+          required
+        />
+        <button
+          type="submit"
+          class="bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-2 text-white font-semibold hover:opacity-90 transition"
+        >
+          Search
+        </button>
+      </form>
+    </section>
+    <br />
 
-    <div id="search-result"></div>
-    <button id="show-more-btn">Show more</button>
+    <!-- Search Results (Hidden Initially) -->
+    <section
+      id="results-section"
+      class="hidden px-4 py-8 bg-white text-black rounded-t-3xl shadow-lg"
+    >
+      <div
+        id="search-result"
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+      ></div>
+      <div class="flex justify-center mt-8">
+        <button
+          id="show-more-btn"
+          class="hidden bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full font-semibold shadow hover:opacity-90 transition"
+        >
+          Show More
+        </button>
+      </div>
+    </section>
 
     <script src="script.js"></script>
   </body>
